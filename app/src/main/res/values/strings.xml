@@ -5,5 +5,8 @@
     <string name="enter_height_cm">Enter height (cm)</string>
     <string name="enter_weight_kg">Enter weight (kg)</string>
     <string name="save">Save</string>
+    <string name="bmi">BMI:</string>
+    <string name="category">Category:</string>
+    <string name="edit_details">Edit Details</string>
 
 </resources>

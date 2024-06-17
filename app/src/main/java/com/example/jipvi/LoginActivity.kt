@@ -34,17 +34,16 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-//        if(FirebaseAuth.getInstance().currentUser == null)
-//        {
-//            startActivity(Intent(this, LoginActivity::class.java))
-//            finish()
-//        }
-//        else
-//        {
-//            startActivity(Intent(this, MainActivity::class.java))
-//            finish()
-//        }
-
+        if(FirebaseAuth.getInstance().currentUser == null)
+        {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+        else
+        {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
