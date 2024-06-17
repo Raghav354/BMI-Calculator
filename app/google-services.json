@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "379705833472",
+    "project_id": "jipvi-13488",
+    "storage_bucket": "jipvi-13488.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379705833472:android:1d793bc0786d3ee96a40e5",
+        "android_client_info": {
+          "package_name": "com.example.jipvi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSAk4BuSbYwwgbSros0pRYTEEBW_y9Dnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
