@@ -22,7 +22,6 @@ import com.google.firebase.auth.auth
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding:ActivityLoginBinding
-    private lateinit var auth: FirebaseAuth
     private lateinit var googleSignClient: GoogleSignInClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,16 +34,16 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        if(FirebaseAuth.getInstance().currentUser == null)
-        {
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
-        }
-        else
-        {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        }
+//        if(FirebaseAuth.getInstance().currentUser == null)
+//        {
+//            startActivity(Intent(this, LoginActivity::class.java))
+//            finish()
+//        }
+//        else
+//        {
+//            startActivity(Intent(this, MainActivity::class.java))
+//            finish()
+//        }
 
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

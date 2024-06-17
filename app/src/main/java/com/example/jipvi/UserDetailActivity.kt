@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
 class UserDetailActivity : AppCompatActivity() {
@@ -69,6 +70,7 @@ class UserDetailActivity : AppCompatActivity() {
                 firestore.collection("users").document(user.uid)
                     .set(userDetails)
                     .addOnSuccessListener {
+                        saveWeightData(user.uid, weightValue)
                         Toast.makeText(this, "Details saved successfully!", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, MainActivity::class.java))
                         finish()
@@ -78,6 +80,23 @@ class UserDetailActivity : AppCompatActivity() {
                     }
             }
         }
+    }
+
+    private fun saveWeightData(userId: String, weight: Float) {
+        val weightData = hashMapOf(
+            "weight" to weight,
+            "timestamp" to Date()
+        )
+
+        firestore.collection("users").document(userId)
+            .collection("weights")
+            .add(weightData)
+            .addOnSuccessListener {
+                // Weight data added successfully
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Failed to save weight data: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun validateInput(name: String, dob: String, height: String, weight: String): Boolean {

@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.jipvi.databinding.ActivityEditDetailBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.Date
 
 class EditDetailActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -83,8 +84,9 @@ class EditDetailActivity : AppCompatActivity() {
             firestore.collection("users").document(user.uid)
                 .set(userDetails)
                 .addOnSuccessListener {
+                    saveWeightData(user.uid, weight)
                     Toast.makeText(this, "Details updated successfully", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@EditDetailActivity , MainActivity::class.java))
+                    startActivity(Intent(this@EditDetailActivity, MainActivity::class.java))
                     finish() // Close the activity and go back to MainActivity
                 }
                 .addOnFailureListener { e ->
@@ -92,4 +94,22 @@ class EditDetailActivity : AppCompatActivity() {
                 }
         }
     }
+
+    private fun saveWeightData(userId: String, weight: Double) {
+        val weightData = hashMapOf(
+            "weight" to weight,
+            "timestamp" to Date()
+        )
+
+        firestore.collection("users").document(userId)
+            .collection("weights")
+            .add(weightData)
+            .addOnSuccessListener {
+                // Weight data added successfully
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Failed to save weight data: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
 }
