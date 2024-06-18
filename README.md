@@ -10,6 +10,16 @@ BMI Calculator is an Android application that allows users to calculate their Bo
 - **Edit User Details**: Update height and weight details.
 - **Weight History Graph**: Visualize weight changes over the past week.
 
+
+
+## Demo video
+
+<p align="center">
+  <a href="https://youtu.be/sCot_QjLnZs?feature=shared" target="_blank">
+    <img src="https://github.com/Raghav354/BMI-Calculator/assets/137503421/06076232-a607-436c-96f3-beaf83be2026" alt="Demo Video" width="250"/>
+  </a>
+</p>
+
 ## Screenshots
 
 <p align="center">
