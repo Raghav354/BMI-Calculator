@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
     <string name="log_in_with_google">Log In With Google</string>
-    <string name="default_web_client_id">379705833472-ui40mrthtf99ha8fk5447966fcp2l0k4.apps.googleusercontent.com</string>
+    <string name="default_web_client_id">YourId</string>
     <string name="enter_height_cm">Enter height (cm)</string>
     <string name="enter_weight_kg">Enter weight (kg)</string>
     <string name="save">Save</string>
